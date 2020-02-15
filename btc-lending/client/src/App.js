@@ -1,30 +1,21 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+import { createBrowserHistory } from 'history';
+import { Router, Route, Switch, Redirect } from 'react-router-dom';
 
-import { useWeb3Injected, useWeb3Network } from '@openzeppelin/network/react';
-import Web3Info from './components/Web3Info/index.js';
+// core components
+import Admin from 'layouts/Admin.js';
 
-import styles from './App.module.scss';
+import 'assets/css/material-dashboard-react.css?v=1.8.0';
 
-const infuraToken = 'a5df6a93ae4f460e972e04fa5398d157';
+const hist = createBrowserHistory();
 
-function App() {
-  const injected = useWeb3Injected();
-  const isHttp = window.location.protocol === 'http:';
-  const local = useWeb3Network('http://127.0.0.1:8545');
-  const network = useWeb3Network(`wss://ropsten.infura.io/ws/v3/${infuraToken}`, {
-    pollInterval: 10 * 1000,
-  });
-
-  return (
-    <>
-      <h1>OpenZeppelin Starter Kit</h1>
-      <div className={styles.App}>
-        {injected && <Web3Info title="Wallet Web3" web3Context={injected} />}
-        {isHttp && <Web3Info title="Local Web3 Node" web3Context={local} />}
-        {infuraToken && <Web3Info title="Infura Web3" web3Context={network} />}
-      </div>
-    </>
-  );
-}
-
-export default App;
+ReactDOM.render(
+  <Router history={hist}>
+    <Switch>
+      <Route path="/admin" component={Admin} />
+      <Redirect from="/" to="/admin/dashboard" />
+    </Switch>
+  </Router>,
+  document.getElementById('root'),
+);
