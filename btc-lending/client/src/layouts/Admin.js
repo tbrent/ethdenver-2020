@@ -16,11 +16,7 @@ import routes from 'routes.js';
 import styles from 'assets/jss/material-dashboard-react/layouts/adminStyle.js';
 
 import bgImage from 'assets/img/sidebar-2.jpg';
-import logo from 'assets/img/reactlogo.png';
-
-import { useWeb3Injected, useWeb3Network } from '@openzeppelin/network/react';
-
-const infuraToken = 'a5df6a93ae4f460e972e04fa5398d157';
+import logo from 'assets/img/btc_eth.png';
 
 let ps;
 
@@ -39,13 +35,6 @@ const switchRoutes = (
 const useStyles = makeStyles(styles);
 
 export default function Admin({ ...rest }) {
-  const injected = useWeb3Injected();
-  const isHttp = window.location.protocol === 'http:';
-  const local = useWeb3Network('http://127.0.0.1:8545');
-  const network = useWeb3Network(`wss://ropsten.infura.io/ws/v3/${infuraToken}`, {
-    pollInterval: 10 * 1000,
-  });
-
   // styles
   const classes = useStyles();
   // ref to help us initialize PerfectScrollbar on windows devices

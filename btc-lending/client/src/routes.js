@@ -25,6 +25,7 @@ import Notifications from '@material-ui/icons/Notifications';
 import Unarchive from '@material-ui/icons/Unarchive';
 import Language from '@material-ui/icons/Language';
 // core components/views for Admin layout
+import BTCBridge from 'views/BTCBridge/BTCBridge.js';
 import DashboardPage from 'views/Dashboard/Dashboard.js';
 import UserProfile from 'views/UserProfile/UserProfile.js';
 import TableList from 'views/TableList/TableList.js';
@@ -37,6 +38,14 @@ import UpgradeToPro from 'views/UpgradeToPro/UpgradeToPro.js';
 import RTLPage from 'views/RTLPage/RTLPage.js';
 
 const dashboardRoutes = [
+  {
+    path: '/bridge',
+    name: 'BTC Bridge',
+    rtlName: 'لوحة القيادة',
+    icon: Language,
+    component: BTCBridge,
+    layout: '/admin',
+  },
   {
     path: '/dashboard',
     name: 'Dashboard',
@@ -61,54 +70,54 @@ const dashboardRoutes = [
     component: TableList,
     layout: '/admin',
   },
-  {
-    path: '/typography',
-    name: 'Typography',
-    rtlName: 'طباعة',
-    icon: LibraryBooks,
-    component: Typography,
-    layout: '/admin',
-  },
-  {
-    path: '/icons',
-    name: 'Icons',
-    rtlName: 'الرموز',
-    icon: BubbleChart,
-    component: Icons,
-    layout: '/admin',
-  },
-  {
-    path: '/maps',
-    name: 'Maps',
-    rtlName: 'خرائط',
-    icon: LocationOn,
-    component: Maps,
-    layout: '/admin',
-  },
-  {
-    path: '/notifications',
-    name: 'Notifications',
-    rtlName: 'إخطارات',
-    icon: Notifications,
-    component: NotificationsPage,
-    layout: '/admin',
-  },
-  {
-    path: '/rtl-page',
-    name: 'RTL Support',
-    rtlName: 'پشتیبانی از راست به چپ',
-    icon: Language,
-    component: RTLPage,
-    layout: '/rtl',
-  },
-  {
-    path: '/upgrade-to-pro',
-    name: 'Upgrade To PRO',
-    rtlName: 'التطور للاحترافية',
-    icon: Unarchive,
-    component: UpgradeToPro,
-    layout: '/admin',
-  },
+  // {
+  //   path: '/typography',
+  //   name: 'Typography',
+  //   rtlName: 'طباعة',
+  //   icon: LibraryBooks,
+  //   component: Typography,
+  //   layout: '/admin',
+  // },
+  // {
+  //   path: '/icons',
+  //   name: 'Icons',
+  //   rtlName: 'الرموز',
+  //   icon: BubbleChart,
+  //   component: Icons,
+  //   layout: '/admin',
+  // },
+  // {
+  //   path: '/maps',
+  //   name: 'Maps',
+  //   rtlName: 'خرائط',
+  //   icon: LocationOn,
+  //   component: Maps,
+  //   layout: '/admin',
+  // },
+  // {
+  //   path: '/notifications',
+  //   name: 'Notifications',
+  //   rtlName: 'إخطارات',
+  //   icon: Notifications,
+  //   component: NotificationsPage,
+  //   layout: '/admin',
+  // },
+  // {
+  //   path: '/rtl-page',
+  //   name: 'RTL Support',
+  //   rtlName: 'پشتیبانی از راست به چپ',
+  //   icon: Language,
+  //   component: RTLPage,
+  //   layout: '/rtl',
+  // },
+  // {
+  //   path: '/upgrade-to-pro',
+  //   name: 'Upgrade To PRO',
+  //   rtlName: 'التطور للاحترافية',
+  //   icon: Unarchive,
+  //   component: UpgradeToPro,
+  //   layout: '/admin',
+  // },
 ];
 
 export default dashboardRoutes;
